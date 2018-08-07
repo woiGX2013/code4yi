@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测速</title>
+</head>
+<body>
+    <button id="测试">点击</button>
+    <script>
+        function speedTest() {
+            // 创建 image 对象
+            var image = new Image();
+
+            // 跨域
+            image.crossOrigin = "anonymous";
+
+            // 开始
+            var begin = Date.now();
+
+            // 图片
+            image.src = "//pd3ewzejl.bkt.clouddn.com/bd_logo1.png";
+
+            // 
+            image.onload = function() {
+                var end = Date.now();
+                var speed = 8 / ((end - begin)/1000);
+                console.log(`${Math.round(speed)}kb/s`);
+            }
+        }
+        speedTest();
+
+
+    </script>
+</body>
+</html>
