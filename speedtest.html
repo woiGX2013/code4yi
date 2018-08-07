@@ -7,7 +7,6 @@
     <title>测速</title>
 </head>
 <body>
-    <button id="测试">点击</button>
     <script>
         function speedTest() {
             // 创建 image 对象
@@ -16,17 +15,17 @@
             // 跨域
             image.crossOrigin = "anonymous";
 
-            // 开始
+            // 开始 获取的是毫秒数
             var begin = Date.now();
 
             // 图片
             image.src = "//pd3ewzejl.bkt.clouddn.com/bd_logo1.png";
 
-            // 
+            // 测速
             image.onload = function() {
                 var end = Date.now();
                 var speed = 8 / ((end - begin)/1000);
-                console.log(`${Math.round(speed)}kb/s`);
+                document.write(`${Math.round(speed)}kb/s`);
             }
         }
         speedTest();
